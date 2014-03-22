@@ -12,7 +12,6 @@
         
         this.plane = new Plane();
         this.plane.set_position(200,240);
-        //this.plane.set_anchor(0.6,0.5);
         this.plane.play('fly');
         
         this.up_key = false;

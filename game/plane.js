@@ -14,7 +14,7 @@
                 animations: {
                     fly: {start: 0, end: 3, loop: true, duration: 300}
                 }
-                , reg: {x: 0.4, y: 0.5, width: 0.8, height: 0.5}
+                , reg: {x: 0.6, y: 0.5, width: 0.8, height: 0.5}
             }]);
 
         this.animation_initialize(sprite_sheet);
