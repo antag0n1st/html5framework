@@ -25,6 +25,8 @@
         
         ContentManager.add_image('blank_black', 'assets/images/blank_black.png');
         ContentManager.add_image('blank_black_highlighted', 'assets/images/blank_black_highlighted.png');
+        ContentManager.add_image('sonic_plane', 'assets/images/sonic_plane.png');
+        ContentManager.add_image('smoke', 'assets/images/smoke.png');
 
         ContentManager.download_images(this.stage, function() {            
             window.game.start();
