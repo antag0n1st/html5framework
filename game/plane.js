@@ -14,7 +14,7 @@
                 animations: {
                     fly: {start: 0, end: 3, loop: true, duration: 300}
                 }
-                , reg: {x: 0.5, y: 0.5, width: 1.0, height: 1.0}
+                , reg: {x: 0.4, y: 0.5, width: 0.8, height: 0.5}
             }]);
 
         this.animation_initialize(sprite_sheet);
@@ -30,6 +30,10 @@
         this.smoke_count = 0;
         this.smoke_time = 0;
         
+    };
+    
+    Plane.prototype.on_mouse_up = function(event){
+        log("plane");
     };
     
     Plane.prototype.smoke = function(){
