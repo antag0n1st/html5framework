@@ -9,10 +9,14 @@
 
     GameScreen.prototype.initialize = function() {
         this.screen_initialize();  
-        
+                
         this.plane = new Plane();
-        this.plane.set_position(200,240);
+        this.plane.set_position(300,240);
         this.plane.play('fly');
+        
+        hero = this.hero = new Hero();
+        this.hero.set_position(100,100);
+        this.add_child(this.hero);
         
         this.up_key = false;
         this.down_key = false;
