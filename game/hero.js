@@ -20,11 +20,12 @@
         Drawable.prototype.on_remove_from_parent.call(this,parent);
         
     };
-  
+    
     Hero.prototype.on_draw = function(context){
-        // do additional drawing here
+        
     };
-  
+    
+    
     window.Hero = Hero;
     
 }(window));
