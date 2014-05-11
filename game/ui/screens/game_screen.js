@@ -15,9 +15,22 @@
         this.plane.play('fly');
         
         hero = this.hero = new Hero();
-        this.hero.set_position(100,100);
+        this.hero.set_position(200,100);
+        this.hero.set_anchor(0.5,0.5);
         this.add_child(this.hero);
         
+//        hero_tween = new TweenRotate(hero,-1,new Bezier(1,.18,.76,.83),2000);        
+//        hero_tween.run();
+        
+//        hero_tween = new TweenRotateBy(hero,90,null,1000);        
+//        hero_tween.run();
+        
+//        hero_tween = new TweenRotateTo(hero,90,new Bezier(.32,.99,.67,1.35),1000);        
+//        hero_tween.run();
+
+        hero_tween = new TweenShake(hero,20,null,null,5000);        
+        hero_tween.run();
+                
         this.up_key = false;
         this.down_key = false;
         
