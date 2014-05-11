@@ -5,16 +5,15 @@
     }
 
 
-    Game.prototype.initialize = function() {
 
+    Game.prototype.initialize = function() {
+        
         this.stage = new Stage();
+        
         this.input = new Input();
         
-        if(!Config.is_mobile){            
-            this.input.add_listener('stage');
-        }
+        this.input.add_listener('stage');
         
-
         this.paused = false;
         this.pause_callback = function() {
         };
@@ -23,15 +22,19 @@
         this.navigator = new Navigator();
    
         
-        ContentManager.add_image('anchor', 'assets/images/anchor.png');
         ContentManager.add_image('dot', 'assets/images/dot.png');
+        ContentManager.add_image('anchor', 'assets/images/anchor.png');
+        
         ContentManager.add_image('blank_black', 'assets/images/blank_black.png');
         ContentManager.add_image('blank_black_highlighted', 'assets/images/blank_black_highlighted.png');
         ContentManager.add_image('sonic_plane', 'assets/images/sonic_plane.png');
         ContentManager.add_image('smoke', 'assets/images/smoke.png');
         ContentManager.add_image('hero', 'assets/images/hero.png');
+        
+        
+        
 
-        ContentManager.download_images(this.stage, function() {            
+        ContentManager.download_images(this.stage, function() {  
             window.game.start();
         });
 
@@ -42,7 +45,6 @@
 
 
     Game.prototype.start = function() {
-
         this.navigator.add(new GameScreen());
         
         // we want to do some work before we update the canvas,
@@ -71,8 +73,9 @@
     Game.prototype.tick = function() {
 
         this.stage.clear_canvas();
-
+        
         this.navigator.update();
+                
         Actions.run();
 
         // check if the game is paused
@@ -83,7 +86,7 @@
         }
 
 
-        if (window.Config.debug) {
+        if (Config.debug) {
             this.stage.debug_grid();
         }
         
