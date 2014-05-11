@@ -7,7 +7,7 @@
 
     Game.prototype.initialize = function() {
 
-        this.stage = new Stage('stage');
+        this.stage = new Stage();
         this.input = new Input();
         
         if(!Config.is_mobile){            
@@ -23,6 +23,8 @@
         this.navigator = new Navigator();
    
         
+        ContentManager.add_image('anchor', 'assets/images/anchor.png');
+        ContentManager.add_image('dot', 'assets/images/dot.png');
         ContentManager.add_image('blank_black', 'assets/images/blank_black.png');
         ContentManager.add_image('blank_black_highlighted', 'assets/images/blank_black_highlighted.png');
         ContentManager.add_image('sonic_plane', 'assets/images/sonic_plane.png');
