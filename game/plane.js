@@ -34,6 +34,11 @@
         log("plane");
     };
     
+    Plane.prototype.on_frame = function(frame_index,animation_name){
+//        log("frame: "+frame_index);
+//        log(animation_name);
+    };
+    
     Plane.prototype.update = function(dt){
         //console.log(dt);
         Animation.prototype.update.call(this,dt);
