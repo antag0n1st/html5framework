@@ -19,13 +19,15 @@
         this.hero.set_position(200,100);
         this.hero.set_anchor(0.5,0.5);
         this.hero.rotate_to(30);
+        this.hero.z_index = 1;
         this.add_child(this.hero);
         
         
         this.hero2 = new Sprite('hero');
-        this.hero2.set_position(400,100);
+        this.hero2.set_position(230,100);
         this.hero2.set_anchor(0.5,0.5);
         this.hero2.rotate_to(30);
+        this.hero2.z_index = 1;
         this.add_child(this.hero2);
         
 //        hero_tween = new TweenTime(1,new Bezier(.17,.67,.64,.98),800);        
