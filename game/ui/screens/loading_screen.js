@@ -76,18 +76,23 @@
     };
     
     LoadingScreen.prototype.on_added_to_parent = function(parent){
-        Drawable.prototype.on_added_to_parent.call(this,parent);
+        Screen.prototype.on_added_to_parent.call(this,parent);
         
     };
     
     LoadingScreen.prototype.on_remove_from_parent = function(parent){
-        Drawable.prototype.on_remove_from_parent.call(this,parent);
+        Screen.prototype.on_remove_from_parent.call(this,parent);
         
     };
     
     LoadingScreen.prototype.draw = function(context){
-        context.fillStyle="#FFFFFF";
+       
+        Screen.prototype.draw.call(this,context);
+        
+        context.fillStyle = "#FFFFFF";
         context.fillRect(this.bounds.pos.x,this.bounds.pos.y,this.width,this.height);
+        
+        
         
     };
     

@@ -44,7 +44,7 @@
 
             ContentManager.download_images(this.stage, function() {
                 window.setTimeout(function() {
-                    game.navigator.add(new GameScreen());
+                    game.navigator.add(new GameScreen(),"FADEIN");
                 }, 1500);
             });
 

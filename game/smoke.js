@@ -27,7 +27,7 @@
 
         this.begin_alpha = 0.9;
         this.end_alpha = 0.0;
-
+        this.set_anchor(0.5,0.5);
         this.set_scale(this.begin_scale);
         this.set_alpha(this.begin_alpha);
         

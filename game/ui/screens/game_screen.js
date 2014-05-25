@@ -10,7 +10,21 @@
     GameScreen.prototype.initialize = function() {
         this.screen_initialize();  
         
+           red = new Sprite('red');
+           red.set_position(100,100);
+           
+           yellow = new Sprite('yellow');
+           yellow.set_position(50,50);
+           
+           blue = new Sprite('blue');
+           blue.set_position(50,50);
+           
+           this.add_child(red);
+           red.add_child(yellow);
+           yellow.add_child(blue);
                         
+        return;
+        
         this.plane = new Plane();
         this.plane.set_position(300,240);
         this.plane.play('fly');
@@ -76,6 +90,7 @@
     GameScreen.prototype.update = function(dt) {
         
        // console.log(dt);
+        return;
 
         if(this.up_key){
             this.plane.steer_up(dt);
