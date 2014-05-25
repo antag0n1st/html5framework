@@ -4,10 +4,10 @@
         this.initialize();
     }    
     
-    Smoke.prototype = new Drawable();
-    Smoke.prototype.drawable_initialize = Smoke.prototype.initialize;    
+    Smoke.prototype = new Sprite();
+    Smoke.prototype.sprite_initialize = Smoke.prototype.initialize;    
     Smoke.prototype.initialize = function(){        
-        this.drawable_initialize();
+        this.sprite_initialize('smoke');
         
         this.duration = 500;
         this.direction = new Vector(1,1);
@@ -21,7 +21,8 @@
         this.begin_alpha = 0.9;
         this.end_alpha = 0.0;
                 
-        this.image = ContentManager.images.smoke.image;
+        this.set_scale(this.begin_scale);
+        this.set_alpha(this.begin_alpha);
         
         this.width = this.image.width;
         this.height = this.image.height;
@@ -36,22 +37,15 @@
         Drawable.prototype.on_remove_from_parent.call(this,parent);        
     };
     
-    Smoke.prototype.update = function(){
+    Smoke.prototype.update = function(dt){
         var pos = this.get_position();
        
-        this.direction.setLength(Ticker.step*this.trust_magnitude);
-        //this.direction.scale(Ticker.step*60/1000);
+        this.direction.setLength(dt*this.trust_magnitude);
         pos.add(this.direction);
         this.set_position(pos.x,pos.y);
-    };
-    
-    Smoke.prototype.draw = function(context){
-      
-       this.update();
         
-        var position = this.bounds.pos;
         
-        this.total_time += Ticker.step;
+        this.total_time += dt;
         
         var t = this.total_time / this.duration;
         
@@ -61,25 +55,20 @@
             this.remove_from_parent();
         }else{
            
-            context.save();
+           
             
             var f =  this.begin_scale + (this.end_scale - this.begin_scale)*t;
     
             var a =  this.begin_alpha + (this.end_alpha - this.begin_alpha)*t;
             
-            context.globalAlpha = a;
-      
-            context.drawImage(this.image,0,0,this.width,this.height,
-            position.x- f*this.width/2,position.y - f*this.height/2,
-            this.width*f ,this.height*f);
-        
-        
-             context.restore();
+            this.set_scale(f);
+            this.set_alpha(a);
+            
         }
-               
-        
         
     };
+    
+    
     
     Smoke.prototype.clear = function(context){
         
