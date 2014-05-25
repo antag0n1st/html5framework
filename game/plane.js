@@ -22,11 +22,11 @@
         this.emiter_point = new Vector(-40,10);
         this.velocity = new Vector(0, 0);
         
-        this.rotation = 50/1000;        
+        this.rotation = 50/1000;   
         
-        this.smoke_frequency = 20/1000; // per second
-        this.smoke_count = 0;
-        this.smoke_time = 0;
+        this.emitter = new Emitter(this.position,null,Smoke,15/1000);
+        this.emitter.run();
+        
         
     };
     
@@ -43,32 +43,7 @@
         //console.log(dt);
         Animation.prototype.update.call(this,dt);
         
-        //console.log(dt);
-        
-        this.smoke_time += dt;        
-        
-        var tp = Math.round(this.smoke_time * this.smoke_frequency);
-        
-        var particles_to_emit = tp - this.smoke_count;
-        
-        this.smoke_count = tp;        
-        
-        for(var i=0;i<particles_to_emit;i++){
-            
-                var r1 = Math.random_int(0,6);
-                var r2 = Math.random_int(0,6);
-
-                 var pos = this.position;
-                 var anchor = Vector.addition(pos,this.emiter_point);
-
-                anchor.x += r1 - 3;
-                anchor.y += r2 - 3;
-                
-                var smoke = new Smoke();
-
-                smoke.set_position(anchor.x,anchor.y);
-                this.get_parent().add_child(smoke); // the smoke will be a sibling
-        }
+        this.emitter.emission_point = this.get_position().add(this.emiter_point);
         
     };
     
@@ -86,6 +61,7 @@
     
     Plane.prototype.on_added_to_parent = function(parent){
         Drawable.prototype.on_added_to_parent.call(this,parent);
+        this.emitter.layer = parent;
         
     };
     
