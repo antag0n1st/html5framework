@@ -33,7 +33,7 @@
 
         window.game = this;
 
-        ContentManager.download_images(this.stage, function() {
+        ContentManager.download_resources(this.stage, function() {
 
             game.load_assets();
 
@@ -42,7 +42,7 @@
             Ticker.set_fps(30);
             Ticker.start();
 
-            ContentManager.download_images(this.stage, function() {
+            ContentManager.download_resources(this.stage, function() {
                 window.setTimeout(function() {
                     game.navigator.add(new GameScreen(),"FADEIN");
                 }, 1500);
