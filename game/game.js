@@ -43,9 +43,9 @@
             Ticker.start();
 
             ContentManager.download_resources(this.stage, function() {
-                window.setTimeout(function() {
+               // window.setTimeout(function() {
                     game.navigator.add(new GameScreen(),"FADEIN");
-                }, 1500);
+               // }, 1500);
             });
 
         });

@@ -22,7 +22,7 @@
         this.emiter_point = new Vector(-40,10);
         this.velocity = new Vector(0, 0);
         
-        this.rotation = 50/1000;   
+        this.rotation = 2/1000;   
         
         this.emitter = new Emitter(this.position,null,Smoke,15/1000);
         this.emitter.run();
@@ -50,13 +50,13 @@
     Plane.prototype.steer_up = function(dt){
         var angle = this.angle;
         angle -= dt*this.rotation;
-        this.rotate_to(angle);
+        this.rotate_to( angle);
     };
     
     Plane.prototype.steer_down = function(dt){
         var angle = this.angle;
         angle += dt*this.rotation;
-        this.rotate_to(angle);
+        this.rotate_to( angle);
     };
     
     Plane.prototype.on_added_to_parent = function(parent){
@@ -93,7 +93,7 @@
         
         var a = angle - this.angle;        
         Drawable.prototype.rotate_to.call(this,angle);
-        this.emiter_point.rotate(Math.degrees_to_radians(a));
+        this.emiter_point.rotate(a);
     };
     
     Plane.prototype.clear = function(context){
