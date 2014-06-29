@@ -11,11 +11,11 @@
         this.screen_initialize();
 
 
-        this.spineAnimation = new SpineAnimation('knight');
-        this.spineAnimation.set_position(300,400);
+        this.knight = new SpineAnimation('knight');
+        this.knight.set_position(300,400);
         
-        this.spineAnimation.play('run');
-        this.add_child(this.spineAnimation);
+        this.knight.play('run');
+        this.add_child(this.knight);
         
         
         this.goblin = new SpineAnimation('goblins');
