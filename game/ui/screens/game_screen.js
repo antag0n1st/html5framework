@@ -11,9 +11,18 @@
         this.screen_initialize();
 
 
-        this.spineAnimation = new SpineAnimation('skeleton');
+        this.spineAnimation = new SpineAnimation('knight');
         this.spineAnimation.set_position(300,400);
+        
+        this.spineAnimation.play('run');
         this.add_child(this.spineAnimation);
+        
+        
+        this.goblin = new SpineAnimation('goblins');
+        this.goblin.set_position(500,400);
+        
+        this.goblin.play('walk');
+        this.add_child(this.goblin);
         
         return;
 
