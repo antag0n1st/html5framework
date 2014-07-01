@@ -12,17 +12,23 @@
 
 
         this.knight = new SpineAnimation('knight');
-        this.knight.set_position(300,400);
+        this.knight.set_position(400,400);
         
         this.knight.play('run');
         this.add_child(this.knight);
         
         
         this.goblin = new SpineAnimation('goblins');
-        this.goblin.set_position(500,400);
+        this.goblin.set_position(650,400);
         
         this.goblin.play('walk');
         this.add_child(this.goblin);
+        
+        this.squashi = new SpineAnimation('squashi');
+        this.squashi.set_position(130,400);
+        
+        this.squashi.play('jump');
+        this.add_child(this.squashi);
         
         return;
 

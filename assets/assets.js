@@ -13,6 +13,7 @@ Game.prototype.load_assets = function() {
     
     ContentManager.add_spine_animation('knight');
     ContentManager.add_spine_animation('goblins');
+    ContentManager.add_spine_animation('squashi');
     
     
     ////////////////////////////////////////////////////////////////////////
