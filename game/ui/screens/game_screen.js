@@ -12,8 +12,10 @@
 
 
         this.knight = new SpineAnimation('knight');
-        this.knight.set_position(400,400);
-        
+        var bounds = new Polygon(new Vector(0,0), [ new Vector(0,0), new Vector(80,0), new Vector(80,190), new Vector(0,190) ]);  
+        bounds.translate(-40,-190);
+        this.knight.bounds = bounds;
+        this.knight.set_position(400,400);        
         this.knight.play('run');
         this.add_child(this.knight);
         
