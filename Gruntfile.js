@@ -48,7 +48,7 @@ module.exports = function(grunt) {
                     "lib/ui/tablecell.js"
 
                 ],
-                dest: 'build/<%= pkg.name %>.min.js'
+                dest: 'lib/<%= pkg.name %>.min.js'
             }
         }
     });
