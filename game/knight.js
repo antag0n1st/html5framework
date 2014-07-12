@@ -24,13 +24,16 @@
     Knight.prototype.update = function(dt){
         SpineAnimation.prototype.update.call(this,dt);
         
-        
     };
     
     Knight.prototype.on_note = function(event_name,data,sender){
         log('knight event_name: '+event_name);
         log("data: "+data);
         log(sender);
+    };
+    
+    Knight.prototype.on_spine_event = function(trackIndex, event){
+       // log(event);
     };
     
     
