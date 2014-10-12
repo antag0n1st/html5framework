@@ -50,6 +50,7 @@
         if(Config.debug_info){
             
             this.debug_label = new Label();
+            this.debug_label.z_index = -1;
             
             this.debug_label.set({
                 text: "Window : "+Config.window_width+"x"+Config.window_height+
@@ -94,11 +95,10 @@
     Game.prototype.tick = function() {
 
         this.stage.clear_canvas();
-        this.stage.draw();
-
-        this.navigator.update();
         
+        this.navigator.update();        
         Actions.run();
+        this.stage.update();
 
         if (Config.debug) {
             this.stage.debug_grid();
