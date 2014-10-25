@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 src: [
-                    "lib/config.js",
+                    "config.js",
                     "lib/external/sat.js",
                     "lib/external/kibo.js",
                     "lib/external/howler.js",
