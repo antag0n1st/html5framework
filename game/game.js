@@ -42,7 +42,6 @@
                 window.setTimeout(function() {
                     game.navigator.add(new GameScreen(), "FADEIN");
                 }, 300);
-                window.scrollTo(scrollToX,scrollToY);
             });
 
         });
@@ -66,9 +65,6 @@
             
 
         }
-        
-        window.scrollTo(scrollToX,scrollToY);
-
     };
 
     Game.prototype.resize = function() {

@@ -40,8 +40,8 @@ Config.set_game_size = function(width, height, mode) {
     
 
     var low_limit_width = 480;
-    var low_limit_height = 280;
-
+    var low_limit_height = 278;
+    
     if (!Config._is_resolution_set) { // if it is not set for low resolution
         // lets check if it is actually for a low resolution
 
@@ -49,7 +49,7 @@ Config.set_game_size = function(width, height, mode) {
             Config.device_height = window.screen.height;
             Config.device_width = window.screen.width;
         }
-
+        
         if (size.width < low_limit_width || size.height < low_limit_height) {
             Config.is_low_resolution = true;
         }
@@ -65,8 +65,6 @@ Config.set_game_size = function(width, height, mode) {
         Config._is_resolution_set = true;
 
     }
-
-    window.scrollTo(scrollToX,scrollToY);
 
     Config.window_width = size.width;
     Config.window_height = size.height;
@@ -195,7 +193,7 @@ window.addEventListener("MSFullscreenChange", function(evt) {
 
 window.addEventListener("resize", function(event) {
     Config.set_game_size(Config.screen_width, Config.screen_height, Config.window_mode);
-    window.scrollTo(scrollToX,scrollToY);
+
     if(game){
         game.resize();
     }

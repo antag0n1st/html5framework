@@ -34,6 +34,10 @@
         this.squashi.play('jump');
         this.add_child(this.squashi);
         
+        var grid = new Grid(4,3);
+       
+         window.grid = grid;
+        
         return;
 
         /////////////////////////////////////////////////////////////////////////
